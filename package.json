@@ -1,0 +1,30 @@
+{
+  "name": "leader-meet-dev",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kod-ze-shira/Leader-Meet-Dev.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kod-ze-shira/Leader-Meet-Dev/issues"
+  },
+  "homepage": "https://github.com/kod-ze-shira/Leader-Meet-Dev#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "firebase": "^9.0.2",
+    "firebase-tools": "^9.18.0",
+    "mongoose": "^5.12.0",
+    "nodemailer": "^6.5.0",
+    "socket.io": "^4.0.0"
+  }
+}

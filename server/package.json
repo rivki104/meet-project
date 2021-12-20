@@ -1,0 +1,42 @@
+{
+  "name": "webrtc-audio-demo",
+  "version": "1.0.0",
+  "description": "A simple demo app for webrtc audio",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agilityfeat/webrtc-audio-demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/agilityfeat/webrtc-audio-demo/issues"
+  },
+  "homepage": "https://github.com/agilityfeat/webrtc-audio-demo#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "http": "0.0.1-security",
+    "jshint": "^2.12.0",
+    "mongoose": "^5.11.13",
+    "nodemailer": "^6.4.14",
+    "path": "^0.12.7",
+    "pug": "^3.0.2",
+    "recordrtc": "^5.6.1",
+    "recordrtc-nodejs": "^1.0.6",
+    "recordrtc-socketio": "^1.0.6",
+    "socket.io": "^3.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.17.0",
+    "eslint-plugin-react": "^7.22.0"
+  }
+}

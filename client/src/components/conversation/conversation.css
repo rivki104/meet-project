@@ -1,0 +1,379 @@
+.conversationBg {
+    background-color: rgb(240, 246, 246);
+    width: 101%;
+    height: 90vh;
+    right: 0px;
+}
+
+#peoplesIcon {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: white;
+    border: 1px solid black;
+    box-shadow: none;
+    outline: 0;
+    margin-bottom: 10px;
+}
+
+#gum {
+    /* width: 200px;
+    height: 600px; */
+    bottom: 1995px;
+    /* left: 1055px; */
+    z-index: 1;
+    /* position: absolute; */
+    /* background-color: #4285F4; */
+}
+
+.logoConversationImg {
+    z-index: 3;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.card {
+    padding: 2px !important;
+    background-color: black;
+}
+
+#localVideo {
+    z-index: 1;
+    position: absolute;
+    width: 50vw;
+    height: 83vh;
+    /* margin-left: 50px; */
+    /* padding-top: 20px; */
+    margin-top: 2vh;
+    /* position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    background-size: cover;
+    overflow: hidden; */
+}
+
+.addPeoplePlus {
+    height: 62px;
+    width: 62px;
+    border-radius: 60px;
+    color: white;
+    background: rgba(10, 10, 10, 0.8);
+    padding-top: 12px !important;
+    /*padding-left: 6px; */
+}
+
+.addPeoplePlus>svg {
+    fill: currentColor;
+}
+
+.actionsBottomDiv {
+    width: 101%;
+    height: 80px;
+    bottom: 0px;
+    right: 0px;
+    background-color: #4285F4;
+    position: fixed;
+}
+
+.actionIcon {
+    color: rgba(10, 10, 10, 0.8);
+}
+
+.recordBtn {
+    height: 70px;
+    height: 50px;
+    margin-top: 8px;
+}
+
+.addPeoplesIcon {
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+.goHistoryDiv {
+    margin-top: 37px;
+    margin-right: 5px;
+    margin-left: 290px;
+    font-size: 20px;
+    font-weight: 500px;
+}
+
+/* 
+.goHistoryLink {
+    color: chocolate;
+} */
+
+.redCircleRecord {
+    margin-top: 30px;
+    margin-left: 160px;
+    z-index: 1;
+    position: absolute;
+}
+
+.round {
+    height: 62px;
+    width: 62px;
+    /* background: rgba(209, 203, 203, 0.5); */
+    border-radius: 60px;
+    margin-left: -6px;
+    margin-top: -25px;
+}
+
+.round>div {
+    height: 65px;
+    width: 65px;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 60px;
+    top: 35px;
+    left: 35px;
+    display: inline-block;
+    position: sticky;
+    transition: 0.4s all;
+    margin-left: 1.3px;
+    padding-top: 6px;
+}
+
+.round>div:hover, .user:hover, .userparent:hover .user {
+    cursor: pointer;
+    transform: scale(1.1) rotate(2deg);
+}
+
+.shadow {
+    text-align: center;
+    padding-top: 6px;
+}
+
+.actions {
+    margin-top: 15%;
+    margin-left: -120px !important;
+}
+
+._3dots>div {
+    height: 8px;
+    width: 8px;
+    border-radius: 60px;
+    background: rgba(255, 255, 255, 0.8);
+    transition: 2s all;
+}
+
+._3dots {
+    display: inline-flex;
+    gap: 4px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.archive_message {
+    opacity: 0;
+    margin-top: 20px;
+    transition: 0.8s all;
+    font-size: 16px;
+    cursor: pointer;
+    /* font-weight: bold; */
+    color: white;
+    display: inherit;
+}
+
+.archive_message:hover {
+    color: white !important;
+    text-decoration: none;
+}
+
+.archive {
+    margin-top: -50px;
+    transition: 0.4s all;
+}
+
+.archive:hover {
+    margin-top: -80px;
+}
+
+.archive:hover .archive_message {
+    opacity: 1;
+    margin-top: 0px;
+}
+
+.archive:hover ._3dots>div:first-child {
+    animation: jump 0.5s forwards ease-in-out 0.2s;
+}
+
+.archive:hover ._3dots>div:not(:first-child):not(:last-child) {
+    animation: jump 0.5s forwards ease-in-out 0.3s;
+}
+
+.archive:hover ._3dots>div:last-child {
+    animation: jump 0.5s forwards ease-in-out 0.4s;
+}
+
+.user {
+    height: 170px !important;
+    width: 170px !important;
+    border-radius: 100px;
+    background-size: cover;
+    cursor: pointer;
+    transition: 0.4s all;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.user:last-child {
+    height: 80px !important;
+    width: 80px !important;
+    margin-left: 10px
+}
+
+.user:not(:last-child) {
+    /* background-color: rgba(10, 10, 10, 0.8); */
+    background-color: rgb(240, 246, 246);
+}
+
+.users {
+    margin-top: 25%;
+    text-align: right;
+}
+
+.user.shadow>svg {
+    fill: rgba(154, 152, 152, 0.4);
+}
+
+.user.shadow:hover svg, .addPeoplePlus:hover svg {
+    animation: spin 1s forwards ease-in-out;
+}
+
+.tag {
+    margin-top: 10px;
+    align-self: center;
+    background: rgba(156, 156, 156, 0.5);
+    color: white;
+    padding: 2px 6px;
+    opacity: 0;
+    font-size: 13px;
+    transition: 0.5s all;
+    position: absolute;
+    margin-left: -104px;
+}
+
+.user:hover .tag, .userparent:hover .tag {
+    opacity: 1;
+    margin-top: -60px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(180deg);
+    }
+    60% {
+        transform: rotate(360deg);
+    }
+    80% {
+        transform: rotate(-100deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes jump {
+    0% {
+        margin-top: -5px;
+    }
+    50% {
+        margin-top: -10px;
+    }
+    100% {
+        margin-top: 0px;
+    }
+}
+
+@media only screen and (max-width:770px) {
+    body {
+        overflow: hidden;
+    }
+    .users {
+        display: -webkit-inline-box;
+        bottom: 40px;
+        position: fixed;
+        z-index: 9
+    }
+    .user {
+        height: 80px !important;
+        width: 80px !important;
+    }
+    .user:last-child {
+        height: 70px !important;
+        width: 70px !important;
+    }
+    .actionsBottomDiv {
+        width: auto !important;
+        position: relative !important;
+    }
+    .conversationBg {
+        margin-left: 0px !important;
+    }
+    .tag {
+        margin-top: -40px;
+    }
+}
+
+.tag {
+    margin-top: 10px;
+    align-self: center;
+    background: rgba(156, 156, 156, 0.5);
+    color: white;
+    padding: 2px 6px;
+    opacity: 0;
+    font-size: 13px;
+    transition: 0.5s all;
+    position: absolute;
+    margin-left: -104px;
+}
+
+.user:hover .tag, .userparent:hover .tag {
+    opacity: 1;
+    margin-top: -60px;
+}
+
+.rec {
+    margin-left: 50px;
+    transition: 0.2s all;
+    cursor: pointer;
+}
+
+.rec:hover {
+    transform: scale(0.9);
+}
+
+.recordingNow {
+    animation: record 2s infinite ease-in-out;
+    background: rgba(221, 12, 12, 0.8);
+    width: 10px;
+    height: 10px;
+    border-radius: 60px;
+    border: none;
+    margin-top: 20px;
+    display: inline-flex;
+    text-align: center;
+}
+
+.recordingNow::before {
+    white-space: pre-line;
+    content: "Recording...";
+    margin-top: 10px;
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+}
+
+.videoCircle {
+    border-radius: 50% !important;
+    object-fit: cover !important;
+}

@@ -1,0 +1,72 @@
+.hr {
+    margin-top: 25px;
+    margin-bottom: 30px;
+    width: 300px;
+}
+
+.signUpSignIn {
+    width: 300px;
+}
+
+.signUpLink {
+    margin-left: 30px;
+}
+
+.signInLink {
+    margin-left: 150px;
+}
+
+.loginForm {
+    width: 50%;
+    padding-top: 150px;
+}
+
+.btnSignInGoogle {
+    border: none;
+    box-shadow: none;
+    outline: 0;
+}
+
+.alertLoginMessage {
+    position: fixed;
+    margin-top: 10px;
+    z-index: 3;
+    font-size: smaller;
+    font-weight: 500;
+    color: #fbff00
+}
+
+.alertForgot {
+    z-index: 1;
+    position: absolute;
+}
+
+#emailInput::placeholder {
+    color: rgb(221, 126, 58);
+    opacity: 1;
+    font-size: 17px;
+}
+
+#passwordInput::placeholder {
+    color: rgb(221, 126, 58);
+    opacity: 1;
+    font-size: 17px;
+}
+
+#emailInput, #passwordInput {
+    border-width: 2px;
+    height: 43px;
+    width: 320px;
+    border-image-source: linear-gradient(45deg, #4285F4, lightskyblue);
+    border-image-slice: 1;
+}
+
+#forgotPasswordLink {
+    color: rgb(221, 126, 58);
+    margin-right: 170px;
+    font-size: 25px;
+}
+
+.forgtPasswordDiv {
+    width: 300px;
+}

@@ -1,0 +1,38 @@
+#addContactModalDiv {
+  background-color: blueviolet;
+}
+
+.contactsTable {
+  font-size: 13px;
+  color: rgb(38, 38, 107);
+  height: 200px;
+  /*overflow-y: scroll;
+  scrollbar-color: rebeccapurple green;
+  scrollbar-width: thin; */
+}
+
+.contactsScrollDiv {
+  height: 300px;
+  overflow-y: scroll;
+  scrollbar-color: rebeccapurple green;
+  scrollbar-width: thin;
+}
+
+#addContactInput {
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  outline: 0;
+  font-size: 17px;
+  right: 0;
+  width: 70%;
+  text-align: center;
+}
+
+.trContacts {
+  height: 15px;
+}
+
+.profileImg {
+  border-radius: 200px;
+}

@@ -1,0 +1,62 @@
+  body {
+    font-family: "Varela Round", "Lato", sans-serif;
+  }
+
+  .endScreen {
+    padding-top: 20px;
+    background-image: url('../../assets/backgroundImg.jpg');
+    height: 100vh;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  .endScreenContent {
+    margin-left: 400px;
+    width: 500px;
+    height: 550px;
+    border: chocolate 2px solid;
+    border-radius: 20px;
+    background-color: white;
+  }
+
+  .header {
+    z-index: 2;
+    position: absolute;
+    width: 100%;
+  }
+
+  .avatar {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    margin-left: 80%;
+    z-index: 10;
+  }
+
+  .logOutModal {
+    padding: 20px;
+    margin-left: 1080px;
+    background-color: white;
+    color: grey;
+    position: fixed;
+    right: 5%;
+  }
+
+  .signOutButton {
+    height: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 14px;
+    border: 1px solid rgb(207, 205, 205);
+  }
+
+  .signOutButton:hover {
+    background-color: rgb(134, 132, 132);
+  }
+
+  .picAccount {
+    margin-left: 60px;
+  }
