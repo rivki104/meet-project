@@ -56,7 +56,8 @@ function SignInWithGoogle(props) {
 
     return (
         <div>
-            <button onClick={signinWithGoogle} className="btnSignInGoogle"><img alt="" src={singInGoogleBtn} style={{ width: "220px" }}></img></button>
+            {/* <button onClick={signinWithGoogle} className="btnSignInGoogle"><img alt="" src={singInGoogleBtn} style={{ width: "220px" }}></img></button> */}
+            <img alt="" onClick={signinWithGoogle} className="btnSignInGoogle" src={singInGoogleBtn} style={{ width: "220px" }}></img>
         </div>
     )
 }

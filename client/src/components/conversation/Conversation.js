@@ -15,6 +15,7 @@ const mapStateToProps = (state) => {
         remoteVideo: state.socketReducer.remoteVideo,
         remoteStream: state.socketReducer.remoteStream,
         email: state.conversationReducer.email,
+        isCaller: state.conversationReducer.isCaller,
     };
 }
 
@@ -28,7 +29,7 @@ const mapDispatchToProps = (dispatch) => ({
 
 function Conversation(props) {
 
-    const { socket, remoteVideo, remoteStream, email, history } = props;
+    const { socket, remoteVideo, remoteStream, email, history, isCaller } = props;
     const { dispatch, setRoomId, setLocalVideo, setRemoteVideo, setIfJoinedUser } = props;
 
     const localVideoRef = useRef();
@@ -36,6 +37,7 @@ function Conversation(props) {
 
     const [smallVideoRef, setSmallVideoRef] = useState(remoteVideoRef);
     const [bigVideoRef, setBigVideoRef] = useState(localVideoRef);
+    const [partisipantEnter, setPartisipantEnter] = useState(false);
 
     useEffect(() => {
         //אתחול  הוידאו
@@ -60,6 +62,7 @@ function Conversation(props) {
             let room = window.location.href.slice(window.location.href.lastIndexOf('/') + 1);
             setRoomId(room);
             socket.emit('join', { room });
+            socket.emit('partisipantEnter', { room });
         }
         else {
             //כשיוצר שיחה חדשה
@@ -78,6 +81,8 @@ function Conversation(props) {
         socket.on('initSend', socketId => dispatch({ type: 'INITSEND_EVENT_FROM_SOCKET', payload: socketId }));
         socket.on('toggleAudio', socketService.toggleAudioEventFromSocket);
         socket.on('hungUp', hungUpFunction);
+        socket.on('partisipantEnter', () => { setPartisipantEnter(true) });
+
     }, []);
 
     function hungUpFunction() {
@@ -93,11 +98,19 @@ function Conversation(props) {
     return (
         <div className="conversationBg row">
             <video id="localVideo" muted className="local card offset-md-3" onClick={toggleVideoClass} autoPlay ref={bigVideoRef}></video>
+
             <div className="users offset-2 offset-md-10">
-                <div className="userparent ml-2">
-                    <video id="gum" className="gum user shadow videoCircle" onClick={toggleVideoClass} autoPlay playsInline ref={smallVideoRef}></video>
-                    <span className="tag">{email}</span>
-                </div>
+                {!isCaller ?
+                    <div className="userparent ml-2">
+                        <video id="gum" className="gum user shadow videoCircle" onClick={toggleVideoClass} autoPlay playsInline ref={smallVideoRef}></video>
+                        <span className="tag">{email}</span>
+                    </div>
+                    : isCaller && partisipantEnter ?
+                        <div className="userparent ml-2">
+                            <video id="gum" className="gum user shadow videoCircle" onClick={toggleVideoClass} autoPlay playsInline ref={smallVideoRef}></video>
+                            <span className="tag">{email}</span>
+                        </div>
+                        : ""}
             </div>
         </div>
     );

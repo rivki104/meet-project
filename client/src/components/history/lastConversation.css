@@ -43,6 +43,9 @@ tbody {
 
 .btnDeleteConversation {
     width: 120px;
+    background: black;
+    color: rgb(243, 111, 16);
+    border: 2px solid rgb(243, 111, 16);
 }
 
 .goBackLink {
@@ -73,16 +76,17 @@ tbody {
     padding: 15px;
 }
 
-._3dots>div {
+/* ._3dots>div {
     height: 8px;
     width: 8px;
     border-radius: 60px;
     background: white;
     transition: 2s all;
-}
+} */
 
 .black>div {
-    background: rgb(17, 213, 253);
+    /* background: rgb(17, 213, 253); */
+    background: black;
 }
 
 ._3dots {
@@ -102,11 +106,16 @@ tbody {
     color: white;
     display: inherit;
     padding: 7px 25px;
-    background-image: linear-gradient(to right, rgb(0, 127, 255), #17effc);
+    background: black;
+    border: rgb(243, 111, 16);
+    color: rgb(243, 111, 16);
+    font-weight: 700;
+    /* background-image: linear-gradient(to right, rgb(0, 127, 255), #17effc); */
 }
 
 .archive_message2:hover {
-    color: white !important;
+    /* color: white !important; */
+    color: rgb(243, 111, 16);
     text-decoration: none;
     border-radius: 12px;
 }

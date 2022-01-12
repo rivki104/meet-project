@@ -26,11 +26,12 @@ function BasePage(props) {
     }, [currentUser])
 
     return (
-        <Router>
-            <div className="App">
-                <Routes></Routes>
-            </div>
-        </Router>
+        <div></div>
+        // <Router>
+        //     <div className="App">
+        //         <Routes></Routes>
+        //     </div>
+        // </Router>
     );
 }
 

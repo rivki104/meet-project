@@ -37,7 +37,7 @@ function EndScreen(props) {
                         <h5 className="mt-5">Thank you for using our app</h5>
                     </div>
                     :
-                    <div>
+                    <div className="partisipantEndScreen">
                         <br></br><br></br>
                         <h1 className="mt-5">The meeting was hung up!</h1>
                         <br></br>

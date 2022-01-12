@@ -9,7 +9,8 @@ import { firebase } from '../../services/firebase.service';
 
 import './lastConversation.css';
 import { actions } from '../../redux/actions';
-import loaderAnimation from '../../assets/loaderAnimation.gif';
+
+import { useSpeechSynthesis } from "react-speech-kit";
 
 const mapStateToProps = (state) => {
     return {
@@ -39,7 +40,12 @@ function LastConversations(props) {
     const [showRecordModal, setShowRecordModal] = useState(false);
     const [filteredUserConversations, setFilteredUserConversations] = useState(userConversations);
 
+    const [spaekValue, setSpaekValue] = useState("");
+
+    const { speak } = useSpeechSynthesis();
+
     useEffect(() => {
+        speak({ text: "" });
         if (numApearLastConversation !== 0)
             setLoadingLastConversations(false);
         setNumApearLastConversation(numApearLastConversation + 1);
@@ -54,6 +60,11 @@ function LastConversations(props) {
         //     alert("you have not conversations right now!")
         // }
     }, []);
+
+    useEffect(() => {
+        speak({ text: spaekValue });
+        speak({ text: "" });
+    }, [spaekValue])
 
     useEffect(() => {
         setFilteredUserConversations([...userConversations.filter(
@@ -127,7 +138,7 @@ function LastConversations(props) {
             <div className="row lastConversationHeader">
                 <Header />
                 <h2 className="">Your conversations</h2>
-                <div className="offset-8 offset-md-10 archive last">
+                <div className="offset-8 offset-md-10 archive last" onMouseOver={() => setSpaekValue("go back to conversation")}>
                     <div className="_3dots black">
                         <div></div>
                         <div></div>
@@ -178,14 +189,14 @@ function LastConversations(props) {
 
                                             <td>
                                                 {conversation.wasRecord ?
-                                                    <button className="btnRecordDetails btn btn-secondary" onClick={() => getRecordDetails(conversation._id)}>Record Details</button>
+                                                    <button className="btnRecordDetails btn btn-secondary" onClick={() => getRecordDetails(conversation._id)} onMouseOver={() => setSpaekValue("record details")}>Record Details</button>
                                                     :
                                                     <div style={{ color: "rgb(87, 84, 84)" }}>No recording</div>
                                                 }
                                                 {/* <button disabled={true} className="btn btn-secondary" onClick={() => getRecordDetails(conversation._id)}>Record Details</button>} */}
                                             </td>
                                             <td>
-                                                <button className="btnDeleteConversation btn btn-info" onClick={() => deleteConversation(conversation._id)}>Delete Converstaion</button>
+                                                <button className="btnDeleteConversation btn" onClick={() => deleteConversation(conversation._id)} onMouseOver={() => setSpaekValue("delete conversation")}>Delete Converstaion</button>
                                             </td>
                                         </tr>
                                 ) : ""}

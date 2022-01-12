@@ -27,7 +27,7 @@ function AddContactsModal(props) {
 
     return (
         <div>
-            <Modal size="md" className="text-center" show={showContactsModal} onHide={handleClose} dialogClassName="addContactModal">
+            <Modal size="md" className="text-center addContactsModal" show={showContactsModal} onHide={handleClose} dialogClassName="addContactModal">
                 <div div="addContactModalDiv">
                     <Modal.Header closeButton>
                         <Modal.Title className="text-center">Adding people</Modal.Title>

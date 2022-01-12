@@ -6,7 +6,6 @@ const createConversation = (socket, data, io) => {
 
     socket.join(room);
     socket.emit('created', room);
-
 }
 
 const joinConversation = (socket, data, io) => {

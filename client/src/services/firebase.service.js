@@ -11,9 +11,7 @@ let firebaseConfig = {
 
 const signOut = () => {
   firebase.auth().signOut().then(() => {
-    alert("before remove from the local storage:" + localStorage["currentUserId"])
     localStorage.setItem("currentUserId", "");
-    alert("after remove from the local storage:" + localStorage["currentUserId"])
   }).catch((error) => {
     console.log("There is an error: " + error);
   });

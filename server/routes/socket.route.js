@@ -47,6 +47,9 @@ const onWebSocketConnection = (socket, io) => {
     socket.on('initSend', function (data) {
         console.log('INIT SEND by ' + socket.id + ' for ' + data)
         peers[data].emit('initSend', socket.id)
+    });
+    socket.on('partisipantEnter', function (data) {
+        socket.broadcast.to(data.room).emit('partisipantEnter', data);
     })
 }
 

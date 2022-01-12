@@ -12,6 +12,9 @@ import * as socketService from '../../services/socket.service';
 import './conversation.css'
 import recordSign from '../../assets/recordSign.png';
 
+// speach----------
+import { useSpeechSynthesis } from "react-speech-kit";
+
 const mapStateToProps = (state) => {
     return {
         socket: state.socketReducer.socket,
@@ -44,14 +47,26 @@ function ConversationActions(props) {
 
     const [videoStatus, setVideoStatus] = useState(false);
 
+    const [spaekValue, setSpaekValue] = useState("");
+
     const recordSignCircle = useRef();
 
+    // speach-------- 
+    const { speak } = useSpeechSynthesis();
+
+
     useEffect(() => {
+        speak({ text: "" });
         if (currentUser !== null && contacts.length === 0) {
             getContacts(currentUser.token);
             getAdditionalContacts(currentUser._id);
         }
     }, []);
+
+    useEffect(() => {
+        speak({ text: spaekValue });
+        speak({ text: "" })
+    }, [spaekValue])
 
     //הקלטה
 
@@ -109,7 +124,7 @@ function ConversationActions(props) {
             <div className="row actionsBottomDiv pt-3">
                 {/* <MdChat size={45} onClick={() => props.setVisibleLeft(true)} className="actionIcon ml-5 mt-3 mr-3" /> */}
                 {isCaller ?
-                    <div className="ml-5 addPeoplePlus shadow" onClick={handleShowContacts}>
+                    <div className="ml-5 addPeoplePlus shadow" onClick={handleShowContacts} onMouseOver={() => setSpaekValue("add peoples")}>
                         <svg className="m-auto" xmlns="http://www.w3.org/2000/svg" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" width="40" height="40" >
                             <g>
                                 <g>
@@ -134,22 +149,20 @@ function ConversationActions(props) {
                 <div className="col-1 offset-2 offset-md-4 d-flex justify-content-around p-3">
                     <div onClick={toggleAudio}>
                         {!audio ?
-                            <div className="round shadow"><div><FaMicrophone size={41} title="Mute" className="actionIcon m-1" /></div></div>
+                            <div className="round shadow" onMouseOver={() => setSpaekValue("close microphone")}><div><FaMicrophone size={43} title="Mute" className="actionIcon m-1" /></div></div>
                             :
-                            <div className="round shadow"><div><FaMicrophoneSlash size={44} title="Un Mute" className="actionIcon m-1" /></div></div>
+                            <div className="round shadow" onMouseOver={() => setSpaekValue("open microphone")}><div><FaMicrophoneSlash size={47} title="Un Mute" className="actionIcon m-1" /></div></div>
                         }
                     </div>
                     {isCaller ?
-                        <div className="round shadow z-3"><div><ImPhoneHangUp onClick={hungUp} title="Hung Up" size={40} className="actionIcon m-1" /></div></div>
+                        <div className="round shadow z-3"><div><ImPhoneHangUp onClick={hungUp} onMouseOver={() => setSpaekValue("hung up")} title="Hung Up" size={43} className="actionIcon m-1" /></div></div>
                         : ""}
                     {
                         videoStatus ?
-                            <div className="round shadow"><div><FaVideoSlash title="Video" onClick={toggleVideo} size={40} className="actionIcon mt-1" /></div></div>
+                            <div className="round shadow"><div><FaVideoSlash title="Video" onClick={toggleVideo} onMouseOver={() => setSpaekValue("Hide video")} size={43} className="actionIcon mt-1" /></div></div>
                             :
-                            <div className="round shadow"><div><FaVideo title="Video" onClick={toggleVideo} size={38} className="actionIcon m-2" /></div></div>
-
+                            <div className="round shadow"><div><FaVideo title="Video" onClick={toggleVideo} onMouseOver={() => setSpaekValue("show video")} size={40} className="actionIcon m-2" /></div></div>
                     }
-
                 </div>
                 <div className="offset-1 offset-md-1">
                     {isCaller && remoteStream ?
@@ -168,7 +181,7 @@ function ConversationActions(props) {
                                     <div></div>
                                     <div></div>
                                 </div>
-                                <Link onClick={goHistory} className="archive_message">History Conversations</Link>
+                                <Link onClick={goHistory} onMouseOver={() => speak({ text: "Go history page" })} className="archive_message">History Conversations</Link>
                             </div>
                             : ""}</div>
                     : ""}

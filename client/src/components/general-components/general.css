@@ -22,6 +22,10 @@
     background-color: white;
   }
 
+  .partisipantEndScreen {
+    color: brown;
+  }
+
   .header {
     z-index: 2;
     position: absolute;
@@ -37,26 +41,46 @@
   }
 
   .logOutModal {
-    padding: 20px;
+    margin-top: 10px;
+    /* padding: 6px; */
     margin-left: 1080px;
-    background-color: white;
-    color: grey;
+    /* background-color: white; */
+    background: black;
+    color: rgb(243, 111, 16);
+    /* color: grey; */
     position: fixed;
     right: 5%;
+    border: 2px solid rgb(243, 111, 16);
+  }
+
+  .logOutToastHeader {
+    background-color: black;
+  }
+
+  .currentUserName {
+    color: rgb(243, 111, 16);
   }
 
   .signOutButton {
     height: 40px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 14px;
-    border: 1px solid rgb(207, 205, 205);
+    /* padding-left: 10px;
+    padding-right: 10px; */
+    padding-bottom: 10px !important;
+    margin: auto;
+    border-radius: 5px;
+    background-color: black !important;
+    color: rgb(243, 111, 16);
+    border: 1px solid rgb(243, 111, 16);
+    font-weight: 700;
   }
+
+
 
   .signOutButton:hover {
     background-color: rgb(134, 132, 132);
   }
 
   .picAccount {
-    margin-left: 60px;
+    /* margin-left: 100px; */
+    /* margin: auto; */
   }

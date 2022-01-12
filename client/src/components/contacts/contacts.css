@@ -2,13 +2,28 @@
   background-color: blueviolet;
 }
 
+.addContactsModal .modal-content {
+  background-color: black;
+  color: rgb(243, 111, 16);
+  border: rgb(243, 111, 16) 4px solid;
+  /* .my-modal .modal-content {
+    background-color: red;
+  } */
+}
+
 .contactsTable {
   font-size: 13px;
-  color: rgb(38, 38, 107);
+  /* color: rgb(38, 38, 107); */
+  color: rgb(243, 111, 16);
   height: 200px;
+  font-size: large;
   /*overflow-y: scroll;
   scrollbar-color: rebeccapurple green;
   scrollbar-width: thin; */
+}
+
+.contactsModal {
+  color: rgb(243, 111, 16);
 }
 
 .contactsScrollDiv {

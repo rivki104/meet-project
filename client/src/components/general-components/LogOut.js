@@ -25,7 +25,7 @@ function LogOut(props) {
         signOut();
         history.push('./endScreen');
         setCurrentUser(null);
-        
+
     }
 
     return (
@@ -33,16 +33,16 @@ function LogOut(props) {
             <Row>
                 <Col xs={13}>
                     <Toast className="logOutModal" onClose={() => props.setShowLogOut(false)} show={props.showLogOut} delay={5000} autohide>
-                        <Toast.Header className="text-center">
+                        <Toast.Header className="text-center logOutToastHeader">
                             <br></br>
                             <strong className="mr-auto picAccount">
                                 <Profile />
                             </strong>
                         </Toast.Header>
                         <Toast.Body>
-                            <div style={{ fontWeight: "bold" }} className="text-dark">{currentUser.name}</div>
+
+                            <div style={{ fontWeight: "bold" }} className="currentUserName">{currentUser.name}</div>
                             <div>{currentUser.email}</div>
-                            <br></br>
                             <button onClick={logOutFunc} className="signOutButton bg-white mt-3">Log out of the account</button>
                         </Toast.Body>
                     </Toast>

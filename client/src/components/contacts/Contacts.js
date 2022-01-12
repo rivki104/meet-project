@@ -78,12 +78,12 @@ function Contacts(props) {
     }
 
     return (
-        <div>
+        <div className="contactsModal">
             <input id="addContactInput" placeholder="Please write an email address" onKeyPress={e => {
                 if (e.key === "Enter") selectConversationPartnerAndDial(e.target.value)
             }} ></input>
             <hr></hr>
-            <table className="contactsTable table table-hover table-borderless text-right" >
+            <table className="contactsTable table table-borderless text-right" >
                 <div className="contactsScrollDiv">
                     <tbody>
                         <tr style={{ height: 30 }}>

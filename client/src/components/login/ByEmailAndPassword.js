@@ -122,7 +122,6 @@ const ByEmailAndPassword = (props) => {
                             id="passwordInput"
                             innerRef={passwordRef}
                             onFocus={disapearLoginMessage}
-
                         />
                         {/* <ErrorMessage className="alert alert-danger" name="email" component="div" /> */}
                     </div>
